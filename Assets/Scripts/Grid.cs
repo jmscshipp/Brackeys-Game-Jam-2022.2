@@ -14,7 +14,7 @@ public class Grid : MonoBehaviour
         {
             for (int z = 0; z < zSize; z++)
             {
-                Instantiate(tilePrefab, new Vector3(x, 0.0f, z), Quaternion.identity);
+                Instantiate(tilePrefab, new Vector2(x, z), Quaternion.identity);
             }
         }
     }

@@ -17,10 +17,12 @@ public class Grid : MonoBehaviour
                 Instantiate(tilePrefab, new Vector2(x, z), Quaternion.identity);
             }
         }
+
+        CenterCamera();
     }
 
-    void Update()
+    void CenterCamera()
     {
-        
+        Camera.main.transform.position = new Vector3((xSize - 1) / 2.0f, (zSize - 1) / 2.0f, -10.0f);
     }
 }

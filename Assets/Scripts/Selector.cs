@@ -26,18 +26,22 @@ public class Selector : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && selectedCharacter != null)
         {
             carrying = true;
-            selectedCharacter.GetComponent<BoxCollider2D>().enabled = false;
+            selectedCharacter.GetComponent<BoxCollider2D>().enabled = false; // turn off character's collider until we drop it to avoid OnMouseOver being blocked for tiles
         }
 
         if (Input.GetKeyUp(KeyCode.Mouse0) && selectedCharacter != null)
         {
             if (hoveringTile == null) // not over tile, reset pos
             {
-
+                selectedCharacter.GetComponent<Character>().ResetPos();
             }
             else // over tile, set to tile pos
+            {
+                selectedCharacter.GetComponent<Character>().Placed();
                 selectedCharacter.transform.position = hoveringTile.transform.position;
+            }
 
+            // reset what is our selected character
             selectedCharacter.GetComponent<BoxCollider2D>().enabled = true;
             carrying = false;
             selectedCharacter = null;

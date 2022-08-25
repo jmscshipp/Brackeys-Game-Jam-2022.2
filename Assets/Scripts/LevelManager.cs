@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
 
     int charactersPlaced;
     int characterTotal;
+    List<GameObject> placedCharacters = new List<GameObject>();
     bool gameReady;
     UIManager uiManager;
 
@@ -50,24 +51,31 @@ public class LevelManager : MonoBehaviour
             Instantiate(lancerPrefab, new Vector3(-1.0f, i, 0.0f), Quaternion.identity);
     }
 
-    void BeginTurns()
+    public void BeginTurns() //public to be activated by ui
     {
+        Debug.Log("buttonPressed");
         gameReady = false;
+        foreach(GameObject character in placedCharacters) // goes through the list of all placed characters and tells them to shoot
+        {
+            character.GetComponent<Character>().Shoot();
+        }
     }
 
     // called by a character when they're placed on the board
-    public void CharacterPlaced()
+    public void CharacterPlaced(GameObject character)
     {
         charactersPlaced++;
+        placedCharacters.Add(character);
         uiManager.UpdateCharacterPlacementUI(charactersPlaced, characterTotal);
         if (charactersPlaced == characterTotal)
             gameReady = true;
     }
 
     // called by a character when they're removed from the board
-    public void CharacterRemoved()
+    public void CharacterRemoved(GameObject character)
     {
         charactersPlaced--;
+        placedCharacters.Remove(character);
         uiManager.UpdateCharacterPlacementUI(charactersPlaced, characterTotal);
         if (charactersPlaced < characterTotal)
             gameReady = false;

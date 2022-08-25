@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 751814528}
   - component: {fileID: 751814527}
   - component: {fileID: 751814526}
+  - component: {fileID: 751814529}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -254,6 +255,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &751814529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751814525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b87a391ebccefb44a28e2114bb8ae3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1401212020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -311,6 +324,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b1539bdfd24a4b45acb50b91b5b465e, type: 3}
+--- !u!114 &1431160652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
+  m_PrefabInstance: {fileID: 2167479279116243807}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfb31dad19d083547b5665cd5ac9b5cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2083505319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -321,6 +345,14 @@ PrefabInstance:
     - target: {fileID: 188790944316911286, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962277612291033347, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1431160652}
+    - target: {fileID: 2962277612291033347, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BeginTurns
       objectReference: {fileID: 0}
     - target: {fileID: 9107679030285418761, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
       propertyPath: m_RootOrder

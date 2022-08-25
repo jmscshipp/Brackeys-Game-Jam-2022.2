@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
 
     int charactersPlaced;
     int characterTotal;
+    int charactersAlive;
     List<GameObject> placedCharacters = new List<GameObject>();
     bool gameReady;
     UIManager uiManager;
@@ -23,6 +24,7 @@ public class LevelManager : MonoBehaviour
     {
         charactersPlaced = 0;
         characterTotal = archerNum + swordsmanNum + lancerNum;
+        charactersAlive = characterTotal;
         gameReady = false;
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
 
@@ -32,10 +34,7 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && gameReady)
-        {
-            BeginTurns();
-        }
+
     }
 
     void SetUpCharacters()
@@ -54,10 +53,16 @@ public class LevelManager : MonoBehaviour
     public void BeginTurns() //public to be activated by ui
     {
         Debug.Log("buttonPressed");
-        gameReady = false;
-        foreach(GameObject character in placedCharacters) // goes through the list of all placed characters and tells them to shoot
+
+        uiManager.UpdateCharactersAliveUI(charactersAlive); // reset ui to display characters remaining instead of placed
+
+        if (gameReady)
         {
-            character.GetComponent<Character>().Shoot();
+            gameReady = false;
+            foreach (GameObject character in placedCharacters) // goes through the list of all placed characters and tells them to shoot
+            {
+                character.GetComponent<Character>().Shoot();
+            }
         }
     }
 
@@ -79,5 +84,15 @@ public class LevelManager : MonoBehaviour
         uiManager.UpdateCharacterPlacementUI(charactersPlaced, characterTotal);
         if (charactersPlaced < characterTotal)
             gameReady = false;
+    }
+
+    public void CharacterKilled()
+    {
+        charactersAlive--;
+        uiManager.UpdateCharactersAliveUI(charactersAlive);
+        if (charactersAlive < 1)
+        {
+            // level complete
+        }
     }
 }

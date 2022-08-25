@@ -27,4 +27,18 @@ public class UIManager : MonoBehaviour
             playButton.gameObject.SetActive(false);
         }
     }
+
+    public void UpdateCharactersAliveUI(int charactersAlive)
+    {
+        if (charactersAlive == 0)
+        {
+            characterCountText.text = "All characters were destroyed!";
+            playButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            characterCountText.text = "Characters remaining: " + charactersAlive;
+            playButton.gameObject.SetActive(false);
+        }
+    }
 }

@@ -8,6 +8,7 @@ public class Character : MonoBehaviour
     bool placed;
     Vector3 startPos; // where character was instantiated off the grid
     LevelManager manager;
+    CameraControl camControl;
 
     public int health = 1;
     public float shootForce = 1f;
@@ -20,6 +21,7 @@ public class Character : MonoBehaviour
         placed = false;
         manager = GameObject.Find("LEVELMANAGER").GetComponent<LevelManager>();
         playerSelector = GameObject.Find("SelectionControl").GetComponent<Selector>();
+        camControl = Camera.main.GetComponent<CameraControl>();
         startPos = transform.position;
     }
 
@@ -27,6 +29,7 @@ public class Character : MonoBehaviour
     public void Placed()
     {
         anim.Play("Unhover");
+        camControl.TriggerLightScreenShake();
         if (!placed)
         {
             manager.CharacterPlaced(gameObject); // passes in self so the level manager can keep a record of all placed characters
@@ -78,6 +81,8 @@ public class Character : MonoBehaviour
             Destroy(other.gameObject);
             if (health <= 0)
             {
+                camControl.TriggerHeavyScreenShake();
+                manager.CharacterKilled();
                 Destroy(gameObject);
             }
         }

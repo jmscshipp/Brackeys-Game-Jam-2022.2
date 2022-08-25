@@ -9,6 +9,12 @@ public class Character : MonoBehaviour
     Vector3 startPos; // where character was instantiated off the grid
     LevelManager manager;
 
+    public int health = 1;
+    public float shootForce = 1f;
+    public GameObject shootPoint;
+    public Animator anim;
+    public Projectile bulletPrefab;
+
     void Start()
     {
         placed = false;
@@ -20,9 +26,10 @@ public class Character : MonoBehaviour
     // called by selector when character is put on tile
     public void Placed()
     {
+        anim.Play("Unhover");
         if (!placed)
         {
-            manager.CharacterPlaced();
+            manager.CharacterPlaced(gameObject); // passes in self so the level manager can keep a record of all placed characters
             placed = true;
         }
     }
@@ -31,20 +38,48 @@ public class Character : MonoBehaviour
     public void ResetPos()
     {
         transform.position = startPos;
+        anim.Play("Unhover");
         if (placed)
         {
-            manager.CharacterRemoved();
+            manager.CharacterRemoved(gameObject);
             placed = false;
         }
     }
 
     private void OnMouseOver()
     {
+        anim.Play("HoveredAnim");
         playerSelector.SetSelectedCharacter(gameObject);
+
     }
 
     private void OnMouseExit()
     {
+        if(GetComponent<BoxCollider2D>().enabled == true)
+        {
+            anim.Play("Unhover");
+        }
+        
         playerSelector.SetSelectedCharacter(null);
+    }
+
+    public void Shoot()
+    {
+        Projectile bulletInstance;
+        bulletInstance = Instantiate(bulletPrefab, shootPoint.transform.position, transform.rotation);
+        bulletInstance.rb.AddForce(shootPoint.transform.right * shootForce, ForceMode2D.Impulse);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.GetComponent<Projectile>() != null)
+        {
+            health -= other.GetComponent<Projectile>().damage;
+            Destroy(other.gameObject);
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

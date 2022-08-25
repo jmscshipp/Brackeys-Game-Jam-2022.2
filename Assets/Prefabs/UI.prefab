@@ -222,7 +222,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2962277612291033346}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: BeginTurns
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2962277612603441469
 GameObject:
   m_ObjectHideFlags: 0

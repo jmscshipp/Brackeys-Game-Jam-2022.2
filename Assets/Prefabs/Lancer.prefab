@@ -224,6 +224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d11178a58a32d4f8f3323d10fd3732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8185545610400169199, guid: d236458b88b802e49beb00fc9c965390, type: 3}
+  bulletPrefab: {fileID: 769241420667320732, guid: d236458b88b802e49beb00fc9c965390, type: 3}
   shootPoint: {fileID: 42093315409932985}
   shootForce: 1

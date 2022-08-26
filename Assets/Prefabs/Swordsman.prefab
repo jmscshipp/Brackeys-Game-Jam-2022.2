@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8073253998927061348}
   m_Layer: 0
-  m_Name: Shoot Point
+  m_Name: Slice point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 3747153667401503784}
   - component: {fileID: 3747153667401503787}
   - component: {fileID: -4979015798425835360}
+  - component: {fileID: 9210958257887981747}
   m_Layer: 0
   m_Name: Swordsman
   m_TagString: Untagged
@@ -164,10 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  shootForce: 2.5
-  shootPoint: {fileID: 42093315409932985}
   anim: {fileID: -4979015798425835360}
-  bulletPrefab: {fileID: 8185545610400169199, guid: d236458b88b802e49beb00fc9c965390, type: 3}
 --- !u!61 &3747153667401503787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -214,3 +212,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9210958257887981747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747153667401503786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b7f4a6c1b64f14ca10754e7bc01504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slicePrefab: {fileID: 1822501174436833193, guid: 59416361144a8ce40bf9dd7a3974192f, type: 3}
+  slicePoint: {fileID: 42093315409932985}

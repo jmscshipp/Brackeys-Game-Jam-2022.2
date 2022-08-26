@@ -72,10 +72,11 @@ public class Character : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
+        Debug.Log(gameObject.name + "collided with " + other.gameObject.name);
         if (other.tag == "Attack")
         {
-            health -= other.GetComponent<Projectile>().damage;
-            Destroy(other.gameObject);
+            health -= other.GetComponent<Weapon>().damage;
+            other.GetComponent<Weapon>().Death();
             if (health <= 0)
             {
                 camControl.TriggerHeavyScreenShake();

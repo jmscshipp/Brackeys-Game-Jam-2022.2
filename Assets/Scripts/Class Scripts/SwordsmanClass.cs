@@ -11,7 +11,7 @@ public class SwordsmanClass : CharacterClass
     public override void Attack()
     {
         Projectile bulletInstance;
-        bulletInstance = Instantiate(bulletPrefab, shootPoint.transform.position, transform.rotation);
-        bulletInstance.rb.AddForce(shootPoint.transform.right * shootForce, ForceMode2D.Impulse);
+        bulletInstance = Instantiate(slicePrefab, slicePoint.transform.position, transform.rotation);
+        bulletInstance.rb.AddForce(slicePoint.transform.right * shootForce, ForceMode2D.Impulse);
     }
 }

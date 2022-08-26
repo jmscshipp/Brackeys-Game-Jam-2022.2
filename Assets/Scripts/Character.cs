@@ -11,6 +11,10 @@ public class Character : MonoBehaviour
     CameraControl camControl;
     CharacterClass myClass;
 
+    public float currentRotation;
+    public float rotationGoal; // to be rotated to
+    float rotationLerpCounter = 0f;
+
     public int health = 1;
     public Animator anim;
 
@@ -22,6 +26,15 @@ public class Character : MonoBehaviour
         camControl = Camera.main.GetComponent<CameraControl>();
         myClass = GetComponent<CharacterClass>();
         startPos = transform.position;
+    }
+
+    private void Update()
+    {
+        if (currentRotation != rotationGoal)
+        {
+            rotationLerpCounter += Time.deltaTime * 10f;
+            transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, 0, currentRotation), Quaternion.Euler(0, 0, rotationGoal), rotationLerpCounter);
+        }
     }
 
     // called by selector when character is put on tile
@@ -46,6 +59,14 @@ public class Character : MonoBehaviour
             manager.CharacterRemoved(gameObject);
             placed = false;
         }
+    }
+
+    // called by selector when character is right clicked
+    public void Rotate()
+    {
+        currentRotation = rotationGoal;
+        rotationLerpCounter = 0f;
+        rotationGoal += 90.0f;
     }
 
     private void OnMouseOver()

@@ -32,7 +32,7 @@ public class Selector : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse1) && selectedCharacter != null) // for rotating character
         {
-            selectedCharacter.transform.Rotate(0, 0, 90);
+            selectedCharacter.GetComponent<Character>().Rotate();
         }
 
         if (Input.GetKeyUp(KeyCode.Mouse0) && selectedCharacter != null)

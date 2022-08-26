@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
             Instantiate(doubleArcherAnglePrefab, new Vector3(-3.0f, i, 0.0f), Quaternion.identity);
         // set up swordsmen
         for (int i = 0; i < swordsmanNum; i++)
-            Instantiate(swordsmanPrefab, new Vector3(-3.0f, i, 0.0f), Quaternion.identity);
+            Instantiate(swordsmanPrefab, new Vector3(-4.0f, i, 0.0f), Quaternion.identity);
     }
 
     public void BeginTurns() //public to be activated by ui

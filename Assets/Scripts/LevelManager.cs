@@ -9,11 +9,13 @@ public class LevelManager : MonoBehaviour
     public int doubleArcherAngleNum = 0;
     public int doubleArcherStraightNum = 0;
     public int swordsmanNum = 0;
+    public int tankNum = 0;
 
     public GameObject archerPrefab;
     public GameObject doubleArcherAnglePrefab;
     public GameObject doubleArcherStraightPrefab;
     public GameObject swordsmanPrefab;
+    public GameObject tankPrefab;
 
     int charactersPlaced;
     int characterTotal;
@@ -25,7 +27,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         charactersPlaced = 0;
-        characterTotal = archerNum + swordsmanNum + doubleArcherAngleNum + doubleArcherStraightNum;
+        characterTotal = archerNum + swordsmanNum + doubleArcherAngleNum + doubleArcherStraightNum + tankNum;
         charactersAlive = characterTotal;
         gameReady = false;
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -43,16 +45,19 @@ public class LevelManager : MonoBehaviour
     {
         // set up archers
         for (int i = 0; i < archerNum; i++)
-            Instantiate(archerPrefab, new Vector3(-2.0f, i, 0.0f), Quaternion.identity);
+            Instantiate(archerPrefab, new Vector3(-1.0f, i, 0.0f), Quaternion.identity);
         // set up double archer angle
         for (int i = 0; i < doubleArcherAngleNum; i++)
-            Instantiate(doubleArcherAnglePrefab, new Vector3(-3.0f, i, 0.0f), Quaternion.identity);
+            Instantiate(doubleArcherAnglePrefab, new Vector3(-2.0f, i, 0.0f), Quaternion.identity);
         // set up double archer straight
         for (int i = 0; i < doubleArcherStraightNum; i++)
-            Instantiate(doubleArcherStraightPrefab, new Vector3(-4.0f, i, 0.0f), Quaternion.identity);
+            Instantiate(doubleArcherStraightPrefab, new Vector3(-3.0f, i, 0.0f), Quaternion.identity);
         // set up swordsmen
         for (int i = 0; i < swordsmanNum; i++)
-            Instantiate(swordsmanPrefab, new Vector3(-5.0f, i, 0.0f), Quaternion.identity);
+            Instantiate(swordsmanPrefab, new Vector3(-4.0f, i, 0.0f), Quaternion.identity);
+        // set up tanks
+        for (int i = 0; i < tankNum; i++)
+            Instantiate(tankPrefab, new Vector3(-5.0f, i, 0.0f), Quaternion.identity);
     }
 
     public void BeginTurns() //public to be activated by ui

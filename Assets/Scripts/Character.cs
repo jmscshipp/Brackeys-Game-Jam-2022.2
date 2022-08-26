@@ -9,12 +9,10 @@ public class Character : MonoBehaviour
     Vector3 startPos; // where character was instantiated off the grid
     LevelManager manager;
     CameraControl camControl;
+    CharacterClass myClass;
 
     public int health = 1;
-    public float shootForce = 1f;
-    public GameObject shootPoint;
     public Animator anim;
-    public Projectile bulletPrefab;
 
     void Start()
     {
@@ -22,6 +20,7 @@ public class Character : MonoBehaviour
         manager = GameObject.Find("LEVELMANAGER").GetComponent<LevelManager>();
         playerSelector = GameObject.Find("SelectionControl").GetComponent<Selector>();
         camControl = Camera.main.GetComponent<CameraControl>();
+        myClass = GetComponent<CharacterClass>();
         startPos = transform.position;
     }
 
@@ -66,16 +65,14 @@ public class Character : MonoBehaviour
         playerSelector.SetSelectedCharacter(null);
     }
 
-    public void Shoot()
+    public void Attack()
     {
-        Projectile bulletInstance;
-        bulletInstance = Instantiate(bulletPrefab, shootPoint.transform.position, transform.rotation);
-        bulletInstance.rb.AddForce(shootPoint.transform.right * shootForce, ForceMode2D.Impulse);
+        myClass.Attack();
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.GetComponent<Projectile>() != null)
+        if (other.tag == "Attack")
         {
             health -= other.GetComponent<Projectile>().damage;
             Destroy(other.gameObject);

@@ -61,7 +61,7 @@ public class LevelManager : MonoBehaviour
             gameReady = false;
             foreach (GameObject character in placedCharacters) // goes through the list of all placed characters and tells them to shoot
             {
-                character.GetComponent<Character>().Shoot();
+                character.GetComponent<Character>().Attack();
             }
         }
     }

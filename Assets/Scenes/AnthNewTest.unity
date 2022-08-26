@@ -470,7 +470,7 @@ PrefabInstance:
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: swordsmanPrefab
       value: 
-      objectReference: {fileID: 3747153667401503786, guid: 900f51a104b3c524f9f362323e501827, type: 3}
+      objectReference: {fileID: 3747153667401503786, guid: 2816155ebed14ec4fbb2fbea6771a108, type: 3}
     - target: {fileID: 2167479278861284171, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: m_Name
       value: LEVELMANAGER

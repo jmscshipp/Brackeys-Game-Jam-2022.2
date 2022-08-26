@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 3747153667401503784}
   - component: {fileID: 3747153667401503787}
   - component: {fileID: -4979015798425835360}
+  - component: {fileID: 6112967525570281487}
   m_Layer: 0
   m_Name: Lancer
   m_TagString: Untagged
@@ -164,10 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  shootForce: 2.5
-  shootPoint: {fileID: 42093315409932985}
   anim: {fileID: -4979015798425835360}
-  bulletPrefab: {fileID: 8185545610400169199, guid: d236458b88b802e49beb00fc9c965390, type: 3}
 --- !u!61 &3747153667401503787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -214,3 +212,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6112967525570281487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747153667401503786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d11178a58a32d4f8f3323d10fd3732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8185545610400169199, guid: d236458b88b802e49beb00fc9c965390, type: 3}
+  shootPoint: {fileID: 42093315409932985}
+  shootForce: 1

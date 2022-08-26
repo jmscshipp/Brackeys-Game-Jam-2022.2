@@ -11,4 +11,5 @@ public abstract class Weapon : MonoBehaviour
     public bool isExplosive = false;
 
     public abstract void Death();
+    public abstract void Deflect();
 }

@@ -489,10 +489,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: healerNum
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: lancerNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
+      propertyPath: defenderNum
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
@@ -505,7 +509,7 @@ PrefabInstance:
       objectReference: {fileID: 3747153667401503786, guid: 2b1539bdfd24a4b45acb50b91b5b465e, type: 3}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: swordsmanNum
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: swordsmanPrefab
@@ -513,7 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 3747153667401503786, guid: 2816155ebed14ec4fbb2fbea6771a108, type: 3}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: doubleArcherAngleNum
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: doubleArcherAnglePrefab

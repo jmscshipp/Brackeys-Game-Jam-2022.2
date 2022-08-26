@@ -51,12 +51,14 @@ MonoBehaviour:
   swordsmanNum: 0
   tankNum: 1
   healerNum: 0
+  defenderNum: 0
   archerPrefab: {fileID: 3747153667401503786, guid: 2b1539bdfd24a4b45acb50b91b5b465e, type: 3}
   doubleArcherAnglePrefab: {fileID: 3747153667401503786, guid: 9c148657059eeab4a95f0804ed2e4409, type: 3}
   doubleArcherStraightPrefab: {fileID: 3747153667401503786, guid: c93e71f3c0f4f4f498ba749784f515af, type: 3}
   swordsmanPrefab: {fileID: 3747153667401503786, guid: 2816155ebed14ec4fbb2fbea6771a108, type: 3}
   tankPrefab: {fileID: 3747153667401503786, guid: ec77118965816d342a02cb80fbf4307d, type: 3}
   healerPrefab: {fileID: 3747153667401503786, guid: 1b7cd2e805f53284aa435e5bf4884814, type: 3}
+  defenderPrefab: {fileID: 3747153667401503786, guid: 68cd20c4e7eab114a89e9bd6144a98ed, type: 3}
 --- !u!1 &2167479279001963481
 GameObject:
   m_ObjectHideFlags: 0

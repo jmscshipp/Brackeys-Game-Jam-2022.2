@@ -84,5 +84,10 @@ public class Character : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        else if (other.tag == "Healing")
+        {
+            health += other.GetComponent<Weapon>().damage;
+            other.GetComponent<Weapon>().Death();
+        }
     }
 }

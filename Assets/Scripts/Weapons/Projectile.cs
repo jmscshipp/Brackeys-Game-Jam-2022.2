@@ -8,4 +8,9 @@ public class Projectile : Weapon
     {
         Destroy(gameObject);
     }
+
+    public override void Deflect()
+    {
+        GetComponent<Rigidbody2D>().velocity *= -1;
+    }
 }

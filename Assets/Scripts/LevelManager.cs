@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public int tankNum = 0;
     public int healerNum = 0;
     public int defenderNum = 0;
+    public int otherNum = 0;
 
     public GameObject archerPrefab;
     public GameObject doubleArcherAnglePrefab;
@@ -30,8 +31,8 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        charactersPlaced = 0;
-        characterTotal = archerNum + swordsmanNum + doubleArcherAngleNum + doubleArcherStraightNum + tankNum + healerNum + defenderNum;
+        charactersPlaced = otherNum;
+        characterTotal = archerNum + swordsmanNum + doubleArcherAngleNum + doubleArcherStraightNum + tankNum + healerNum + defenderNum + otherNum;
         charactersAlive = characterTotal;
         gameReady = false;
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -81,7 +82,15 @@ public class LevelManager : MonoBehaviour
             gameReady = false;
             foreach (GameObject character in placedCharacters) // goes through the list of all placed characters and tells them to shoot
             {
-                character.GetComponent<Character>().Attack();
+                if (character.GetComponent<Character>() != null)
+                {
+                    character.GetComponent<Character>().Attack();
+                }
+                else
+                {
+                    character.GetComponent<StationaryCharacter>().Attack();
+                }
+                
             }
         }
     }

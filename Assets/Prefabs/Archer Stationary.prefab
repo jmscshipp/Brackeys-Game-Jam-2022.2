@@ -124,12 +124,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3747153667401503785}
-  - component: {fileID: 3747153667401503784}
   - component: {fileID: 3747153667401503787}
   - component: {fileID: -4979015798425835360}
   - component: {fileID: 6112967525570281487}
+  - component: {fileID: 4809281671639171376}
   m_Layer: 0
-  m_Name: Archer
+  m_Name: Archer Stationary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,20 +152,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3747153667401503784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3747153667401503786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65712056a3853134dbac57f7a6a545b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  anim: {fileID: -4979015798425835360}
 --- !u!61 &3747153667401503787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -227,3 +213,17 @@ MonoBehaviour:
   bulletPrefab: {fileID: 769241420667320732, guid: d236458b88b802e49beb00fc9c965390, type: 3}
   shootPoint: {fileID: 42093315409932985}
   shootForce: 1
+--- !u!114 &4809281671639171376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747153667401503786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c219445b9f374d345bb2b5712c5e7d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  anim: {fileID: -4979015798425835360}

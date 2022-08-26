@@ -6,12 +6,12 @@ public class LevelManager : MonoBehaviour
 {
     // variables set for each level
     public int archerNum = 0;
+    public int doubleArcherAngleNum = 0;
     public int swordsmanNum = 0;
-    public int lancerNum = 0;
 
     public GameObject archerPrefab;
+    public GameObject doubleArcherAnglePrefab;
     public GameObject swordsmanPrefab;
-    public GameObject lancerPrefab;
 
     int charactersPlaced;
     int characterTotal;
@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         charactersPlaced = 0;
-        characterTotal = archerNum + swordsmanNum + lancerNum;
+        characterTotal = archerNum + swordsmanNum + doubleArcherAngleNum;
         charactersAlive = characterTotal;
         gameReady = false;
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -42,12 +42,12 @@ public class LevelManager : MonoBehaviour
         // set up archers
         for (int i = 0; i < archerNum; i++)
             Instantiate(archerPrefab, new Vector3(-2.0f, i, 0.0f), Quaternion.identity);
+        // set up double archer angle
+        for (int i = 0; i < doubleArcherAngleNum; i++)
+            Instantiate(doubleArcherAnglePrefab, new Vector3(-3.0f, i, 0.0f), Quaternion.identity);
         // set up swordsmen
         for (int i = 0; i < swordsmanNum; i++)
             Instantiate(swordsmanPrefab, new Vector3(-3.0f, i, 0.0f), Quaternion.identity);
-        // set up lancers
-        for (int i = 0; i < lancerNum; i++)
-            Instantiate(lancerPrefab, new Vector3(-1.0f, i, 0.0f), Quaternion.identity);
     }
 
     public void BeginTurns() //public to be activated by ui

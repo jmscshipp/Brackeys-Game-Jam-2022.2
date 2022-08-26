@@ -52,6 +52,7 @@ MonoBehaviour:
   tankNum: 1
   healerNum: 0
   defenderNum: 0
+  otherNum: 1
   archerPrefab: {fileID: 3747153667401503786, guid: 2b1539bdfd24a4b45acb50b91b5b465e, type: 3}
   doubleArcherAnglePrefab: {fileID: 3747153667401503786, guid: 9c148657059eeab4a95f0804ed2e4409, type: 3}
   doubleArcherStraightPrefab: {fileID: 3747153667401503786, guid: c93e71f3c0f4f4f498ba749784f515af, type: 3}

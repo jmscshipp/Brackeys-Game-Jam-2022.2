@@ -10,12 +10,14 @@ public class LevelManager : MonoBehaviour
     public int doubleArcherStraightNum = 0;
     public int swordsmanNum = 0;
     public int tankNum = 0;
+    public int healerNum = 0;
 
     public GameObject archerPrefab;
     public GameObject doubleArcherAnglePrefab;
     public GameObject doubleArcherStraightPrefab;
     public GameObject swordsmanPrefab;
     public GameObject tankPrefab;
+    public GameObject healerPrefab;
 
     int charactersPlaced;
     int characterTotal;
@@ -27,7 +29,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         charactersPlaced = 0;
-        characterTotal = archerNum + swordsmanNum + doubleArcherAngleNum + doubleArcherStraightNum + tankNum;
+        characterTotal = archerNum + swordsmanNum + doubleArcherAngleNum + doubleArcherStraightNum + tankNum + healerNum;
         charactersAlive = characterTotal;
         gameReady = false;
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -58,6 +60,9 @@ public class LevelManager : MonoBehaviour
         // set up tanks
         for (int i = 0; i < tankNum; i++)
             Instantiate(tankPrefab, new Vector3(-5.0f, i, 0.0f), Quaternion.identity);
+        // set up healers
+        for (int i = 0; i < healerNum; i++)
+            Instantiate(healerPrefab, new Vector3(-6.0f, i, 0.0f), Quaternion.identity);
     }
 
     public void BeginTurns() //public to be activated by ui

@@ -9,6 +9,18 @@ public abstract class Weapon : MonoBehaviour
 
     public int damage = 1;
     public bool isExplosive = false;
+    LevelManager manager;
+
+    private void Start()
+    {
+        manager = GameObject.Find("LEVELMANAGER").GetComponent<LevelManager>();
+        manager.AttackSpawned();
+    }
+
+    private void OnDestroy()
+    {
+        manager.AttackDespawned();
+    }
 
     public abstract void Death();
     public abstract void Deflect();

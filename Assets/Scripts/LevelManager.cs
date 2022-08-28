@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -28,6 +29,10 @@ public class LevelManager : MonoBehaviour
     List<GameObject> placedCharacters = new List<GameObject>();
     bool gameReady;
     UIManager uiManager;
+
+    // this variable determines if another turn will be played after the first one
+    public bool turnValid;
+    public int activeAttackNum;
 
     void Start()
     {
@@ -73,8 +78,7 @@ public class LevelManager : MonoBehaviour
 
     public void BeginTurns() //public to be activated by ui
     {
-        Debug.Log("buttonPressed");
-
+        turnValid = false;
         uiManager.UpdateCharactersAliveUI(charactersAlive); // reset ui to display characters remaining instead of placed
 
         if (gameReady)
@@ -93,6 +97,12 @@ public class LevelManager : MonoBehaviour
                 
             }
         }
+    }
+
+    // called by immovable character at the start of the game
+    public void ImmovableCharacterPlaced(GameObject character)
+    {
+        placedCharacters.Add(character);
     }
 
     // called by a character when they're placed on the board
@@ -116,13 +126,45 @@ public class LevelManager : MonoBehaviour
             gameReady = false;
     }
 
-    public void CharacterKilled()
+    public void CharacterKilled(GameObject character)
     {
         charactersAlive--;
+        placedCharacters.Remove(character);
+
         uiManager.UpdateCharactersAliveUI(charactersAlive);
         if (charactersAlive < 1)
         {
             // level complete
+        }
+    }
+
+    // called by character if hit, makes the turn valid
+    public void ValidateTurn()
+    {
+        turnValid = true;
+    }
+
+    // called by attack when spawned, to keep track of turn status
+    public void AttackSpawned()
+    {
+        activeAttackNum++;
+    }
+
+    // called by attack when over, to keep track of turn status
+    public void AttackDespawned()
+    {
+        activeAttackNum--;
+
+        // check to see if we should start another turn
+        if (activeAttackNum == 0)
+        {
+            if (turnValid)
+            {
+                gameReady = true;
+                BeginTurns();
+            }
+            else
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

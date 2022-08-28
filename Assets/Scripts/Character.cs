@@ -93,15 +93,15 @@ public class Character : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        Debug.Log(gameObject.name + "collided with " + other.gameObject.name);
         if (other.tag == "Attack")
         {
+            manager.ValidateTurn(); // something is happening this turn so lets do another right after!
             health -= other.GetComponent<Weapon>().damage;
             other.GetComponent<Weapon>().Death();
             if (health <= 0)
             {
                 camControl.TriggerHeavyScreenShake();
-                manager.CharacterKilled();
+                manager.CharacterKilled(gameObject);
                 Destroy(gameObject);
             }
         }

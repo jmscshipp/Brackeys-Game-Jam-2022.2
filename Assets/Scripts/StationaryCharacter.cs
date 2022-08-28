@@ -22,7 +22,7 @@ public class StationaryCharacter : MonoBehaviour
         camControl = Camera.main.GetComponent<CameraControl>();
         myClass = GetComponent<CharacterClass>();
         startPos = transform.position;
-        //manager.CharacterPlaced(gameObject); don't think we want this to be counted in the placement total
+        manager.ImmovableCharacterPlaced(gameObject);
     }
 
     private void OnMouseOver()
@@ -40,19 +40,24 @@ public class StationaryCharacter : MonoBehaviour
         myClass.Attack();
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(gameObject.name + "collided with " + other.gameObject.name);
         if (other.tag == "Attack")
         {
+            manager.ValidateTurn(); // something is happening this turn so lets do another right after!
             health -= other.GetComponent<Weapon>().damage;
             other.GetComponent<Weapon>().Death();
             if (health <= 0)
             {
                 camControl.TriggerHeavyScreenShake();
-                manager.CharacterKilled();
+                manager.CharacterKilled(gameObject);
                 Destroy(gameObject);
             }
+        }
+        else if (other.tag == "Healing")
+        {
+            health += other.GetComponent<Weapon>().damage;
+            other.GetComponent<Weapon>().Death();
         }
     }
 }

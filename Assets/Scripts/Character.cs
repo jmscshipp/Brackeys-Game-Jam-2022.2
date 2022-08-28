@@ -6,7 +6,6 @@ public class Character : MonoBehaviour
 {
     Selector playerSelector;
     bool placed;
-    Vector3 startPos; // where character was instantiated off the grid
     LevelManager manager;
     CameraControl camControl;
     CharacterClass myClass;
@@ -25,7 +24,6 @@ public class Character : MonoBehaviour
         playerSelector = GameObject.Find("SelectionControl").GetComponent<Selector>();
         camControl = Camera.main.GetComponent<CameraControl>();
         myClass = GetComponent<CharacterClass>();
-        startPos = transform.position;
     }
 
     private void Update()
@@ -50,9 +48,8 @@ public class Character : MonoBehaviour
     }
 
     // called by selector when character is dropped anywhere not on the grid
-    public void ResetPos()
+    public void Reset()
     {
-        transform.position = startPos;
         anim.Play("Unhover");
         if (placed)
         {

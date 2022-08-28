@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour
     List<GameObject> placedCharacters = new List<GameObject>();
     bool gameReady;
     UIManager uiManager;
+    CharacterBank bank;
 
     // this variable determines if another turn will be played after the first one
     public bool turnValid;
@@ -41,6 +42,7 @@ public class LevelManager : MonoBehaviour
         charactersAlive = characterTotal + otherNum;
         gameReady = false;
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        bank = GameObject.Find("CHARACTERBANK").GetComponent<CharacterBank>();
 
         uiManager.UpdateCharacterPlacementUI(0, characterTotal);
         SetUpCharacters();
@@ -55,25 +57,46 @@ public class LevelManager : MonoBehaviour
     {
         // set up archers
         for (int i = 0; i < archerNum; i++)
-            Instantiate(archerPrefab, new Vector3(-1.0f, i, -1.0f), Quaternion.identity);
+        {
+            GameObject newChar = Instantiate(archerPrefab);
+            bank.AddToBank(newChar);
+        }
         // set up double archer angle
         for (int i = 0; i < doubleArcherAngleNum; i++)
-            Instantiate(doubleArcherAnglePrefab, new Vector3(-2.0f, i, -1.0f), Quaternion.identity);
+        {
+            GameObject newChar = Instantiate(doubleArcherAnglePrefab);
+            bank.AddToBank(newChar);
+        }
         // set up double archer straight
         for (int i = 0; i < doubleArcherStraightNum; i++)
-            Instantiate(doubleArcherStraightPrefab, new Vector3(-3.0f, i, -1.0f), Quaternion.identity);
+        {
+            GameObject newChar = Instantiate(doubleArcherStraightPrefab);
+            bank.AddToBank(newChar);
+        }
         // set up swordsmen
         for (int i = 0; i < swordsmanNum; i++)
-            Instantiate(swordsmanPrefab, new Vector3(-4.0f, i, -1.0f), Quaternion.identity);
+        {
+            GameObject newChar = Instantiate(swordsmanPrefab);
+            bank.AddToBank(newChar);
+        }
         // set up tanks
         for (int i = 0; i < tankNum; i++)
-            Instantiate(tankPrefab, new Vector3(-5.0f, i, -1.0f), Quaternion.identity);
+        {
+            GameObject newChar = Instantiate(tankPrefab);
+            bank.AddToBank(newChar);
+        }
         // set up healers
         for (int i = 0; i < healerNum; i++)
-            Instantiate(healerPrefab, new Vector3(-6.0f, i, -1.0f), Quaternion.identity);
+        {
+            GameObject newChar = Instantiate(healerPrefab);
+            bank.AddToBank(newChar);
+        }
         // set up defenders
         for (int i = 0; i < defenderNum; i++)
-            Instantiate(defenderPrefab, new Vector3(-7.0f, i, -1.0f), Quaternion.identity);
+        {
+            GameObject newChar = Instantiate(defenderPrefab);
+            bank.AddToBank(newChar);
+        }
     }
 
     public void BeginTurns() //public to be activated by ui

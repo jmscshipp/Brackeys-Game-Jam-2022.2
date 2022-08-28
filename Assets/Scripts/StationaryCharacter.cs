@@ -22,7 +22,7 @@ public class StationaryCharacter : MonoBehaviour
         camControl = Camera.main.GetComponent<CameraControl>();
         myClass = GetComponent<CharacterClass>();
         startPos = transform.position;
-        manager.CharacterPlaced(gameObject);
+        //manager.CharacterPlaced(gameObject); don't think we want this to be counted in the placement total
     }
 
     private void OnMouseOver()

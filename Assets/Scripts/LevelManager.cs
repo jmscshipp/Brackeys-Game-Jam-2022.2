@@ -31,9 +31,9 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        charactersPlaced = otherNum;
-        characterTotal = archerNum + swordsmanNum + doubleArcherAngleNum + doubleArcherStraightNum + tankNum + healerNum + defenderNum + otherNum;
-        charactersAlive = characterTotal;
+        charactersPlaced = 0;
+        characterTotal = archerNum + swordsmanNum + doubleArcherAngleNum + doubleArcherStraightNum + tankNum + healerNum + defenderNum;
+        charactersAlive = characterTotal + otherNum;
         gameReady = false;
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
 
@@ -98,6 +98,7 @@ public class LevelManager : MonoBehaviour
     // called by a character when they're placed on the board
     public void CharacterPlaced(GameObject character)
     {
+        Debug.Log("Character placed");
         charactersPlaced++;
         placedCharacters.Add(character);
         uiManager.UpdateCharacterPlacementUI(charactersPlaced, characterTotal);

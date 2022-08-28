@@ -32,11 +32,7 @@ public class StationaryCharacter : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if(GetComponent<BoxCollider2D>().enabled == true)
-        {
-            anim.Play("Unhover");
-        }
-
+        anim.Play("Unhover");
     }
 
     public void Attack()

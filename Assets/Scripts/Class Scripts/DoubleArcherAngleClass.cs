@@ -13,10 +13,10 @@ public class DoubleArcherAngleClass : CharacterClass
     {
         // bullet to the right
         Projectile bulletInstance;
-        bulletInstance = Instantiate(bulletPrefab, shootPointSide.transform.position, transform.rotation);
+        bulletInstance = Instantiate(bulletPrefab, shootPointSide.transform.position, shootPointSide.transform.rotation);
         bulletInstance.rb.AddForce(shootPointSide.transform.right * shootForce, ForceMode2D.Impulse);
         // bullet up
-        bulletInstance = Instantiate(bulletPrefab, shootPointUp.transform.position, transform.rotation);
-        bulletInstance.rb.AddForce(shootPointUp.transform.up * shootForce, ForceMode2D.Impulse);
+        bulletInstance = Instantiate(bulletPrefab, shootPointUp.transform.position, shootPointUp.transform.rotation);
+        bulletInstance.rb.AddForce(shootPointUp.transform.right * shootForce, ForceMode2D.Impulse);
     }
 }

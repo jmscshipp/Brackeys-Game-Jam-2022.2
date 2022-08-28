@@ -13,10 +13,10 @@ public class DoubleArcherStraightClass : CharacterClass
     {
         // bullet to the right
         Projectile bulletInstance;
-        bulletInstance = Instantiate(bulletPrefab, shootPointRight.transform.position, transform.rotation);
+        bulletInstance = Instantiate(bulletPrefab, shootPointRight.transform.position, shootPointRight.transform.rotation);
         bulletInstance.rb.AddForce(shootPointRight.transform.right * shootForce, ForceMode2D.Impulse);
         // bullet left
-        bulletInstance = Instantiate(bulletPrefab, shootPointLeft.transform.position, transform.rotation);
-        bulletInstance.rb.AddForce(-shootPointLeft.transform.right * shootForce, ForceMode2D.Impulse);
+        bulletInstance = Instantiate(bulletPrefab, shootPointLeft.transform.position, shootPointLeft.transform.rotation);
+        bulletInstance.rb.AddForce(shootPointLeft.transform.right * shootForce, ForceMode2D.Impulse);
     }
 }

@@ -20,7 +20,7 @@ public class Selector : MonoBehaviour
         if (carrying) // character follows mouse
         {
             Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-            selectedCharacter.transform.position = new Vector3(mousePos.x, mousePos.y, 0.0f);
+            selectedCharacter.transform.position = new Vector3(mousePos.x, mousePos.y, -1.0f);
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && selectedCharacter != null)
@@ -45,7 +45,7 @@ public class Selector : MonoBehaviour
             else // over tile, set to tile pos
             {
                 selectedCharacter.GetComponent<Character>().Placed();
-                selectedCharacter.transform.position = hoveringTile.transform.position;
+                selectedCharacter.transform.position = new Vector3(hoveringTile.transform.position.x, hoveringTile.transform.position.y, -1.0f);
             }
 
             // reset what is our selected character

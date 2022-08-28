@@ -50,25 +50,25 @@ public class LevelManager : MonoBehaviour
     {
         // set up archers
         for (int i = 0; i < archerNum; i++)
-            Instantiate(archerPrefab, new Vector3(-1.0f, i, 0.0f), Quaternion.identity);
+            Instantiate(archerPrefab, new Vector3(-1.0f, i, -1.0f), Quaternion.identity);
         // set up double archer angle
         for (int i = 0; i < doubleArcherAngleNum; i++)
-            Instantiate(doubleArcherAnglePrefab, new Vector3(-2.0f, i, 0.0f), Quaternion.identity);
+            Instantiate(doubleArcherAnglePrefab, new Vector3(-2.0f, i, -1.0f), Quaternion.identity);
         // set up double archer straight
         for (int i = 0; i < doubleArcherStraightNum; i++)
-            Instantiate(doubleArcherStraightPrefab, new Vector3(-3.0f, i, 0.0f), Quaternion.identity);
+            Instantiate(doubleArcherStraightPrefab, new Vector3(-3.0f, i, -1.0f), Quaternion.identity);
         // set up swordsmen
         for (int i = 0; i < swordsmanNum; i++)
-            Instantiate(swordsmanPrefab, new Vector3(-4.0f, i, 0.0f), Quaternion.identity);
+            Instantiate(swordsmanPrefab, new Vector3(-4.0f, i, -1.0f), Quaternion.identity);
         // set up tanks
         for (int i = 0; i < tankNum; i++)
-            Instantiate(tankPrefab, new Vector3(-5.0f, i, 0.0f), Quaternion.identity);
+            Instantiate(tankPrefab, new Vector3(-5.0f, i, -1.0f), Quaternion.identity);
         // set up healers
         for (int i = 0; i < healerNum; i++)
-            Instantiate(healerPrefab, new Vector3(-6.0f, i, 0.0f), Quaternion.identity);
+            Instantiate(healerPrefab, new Vector3(-6.0f, i, -1.0f), Quaternion.identity);
         // set up defenders
         for (int i = 0; i < defenderNum; i++)
-            Instantiate(defenderPrefab, new Vector3(-7.0f, i, 0.0f), Quaternion.identity);
+            Instantiate(defenderPrefab, new Vector3(-7.0f, i, -1.0f), Quaternion.identity);
     }
 
     public void BeginTurns() //public to be activated by ui

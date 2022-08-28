@@ -279,7 +279,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4aaeacd4128774d4b8513ee3cebb0e3e, type: 3}
-  m_Color: {r: 0.3019608, g: 0.3019608, b: 0.3019608, a: 1}
+  m_Color: {r: 0.48235294, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -298,12 +298,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3747153667401503785}
-  - component: {fileID: 3747153667401503784}
   - component: {fileID: 3747153667401503787}
   - component: {fileID: 3997744537078355450}
   - component: {fileID: 7147174272563211271}
+  - component: {fileID: 700400895732416397}
   m_Layer: 0
-  m_Name: Defender
+  m_Name: Defender Stationary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -326,22 +326,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3747153667401503784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3747153667401503786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65712056a3853134dbac57f7a6a545b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentRotation: 0
-  rotationGoal: 0
-  health: 1
-  anim: {fileID: 3997744537078355450}
 --- !u!61 &3747153667401503787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -400,3 +384,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fcc24a7d60f584f834add997e7f91a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &700400895732416397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747153667401503786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c219445b9f374d345bb2b5712c5e7d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  anim: {fileID: 3997744537078355450}

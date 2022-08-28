@@ -66,7 +66,7 @@ public class Character : MonoBehaviour
     {
         currentRotation = rotationGoal;
         rotationLerpCounter = 0f;
-        rotationGoal += 90.0f;
+        rotationGoal -= 90.0f;
     }
 
     private void OnMouseOver()

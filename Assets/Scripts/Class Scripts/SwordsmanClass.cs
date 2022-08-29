@@ -11,5 +11,6 @@ public class SwordsmanClass : CharacterClass
     {
         GameObject siceInstance;
         siceInstance = Instantiate(slicePrefab, slicePoint.transform.position, transform.rotation);
+        siceInstance.GetComponent<Slice>().Death();
     }
 }

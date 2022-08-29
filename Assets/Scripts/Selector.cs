@@ -8,6 +8,7 @@ public class Selector : MonoBehaviour
     GameObject selectedCharacter;
     Tile hoveringTile;
     bool carrying;
+    bool inBank;
     CharacterBank bank;
 
     void Start()
@@ -28,7 +29,11 @@ public class Selector : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && selectedCharacter != null)
         {
             carrying = true;
-            bank.RemoveFromBank(selectedCharacter);
+            if (inBank)
+            {
+                bank.RemoveFromBank(selectedCharacter);
+                inBank = false;
+            }
             selectedCharacter.GetComponent<BoxCollider2D>().enabled = false; // turn off character's collider until we drop it to avoid OnMouseOver being blocked for tiles
             selectedCharacter.GetComponent<Animator>().Play("HeldAnim");
         }
@@ -45,6 +50,7 @@ public class Selector : MonoBehaviour
             {
                 selectedCharacter.GetComponent<Character>().Reset();
                 bank.AddToBank(selectedCharacter);
+                inBank = true;
             }
             else // over tile, set to tile pos
             {

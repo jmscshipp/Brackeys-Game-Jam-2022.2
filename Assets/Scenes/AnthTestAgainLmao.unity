@@ -4506,11 +4506,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: tankNum
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: otherNum
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: archerNum
@@ -4526,7 +4526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: swordsmanNum
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: doubleArcherAngleNum

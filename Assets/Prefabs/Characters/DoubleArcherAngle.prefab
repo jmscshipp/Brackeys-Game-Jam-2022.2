@@ -230,7 +230,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 769241420667320732, guid: d236458b88b802e49beb00fc9c965390, type: 3}
   shootPointSide: {fileID: 42093315409932985}
   shootPointUp: {fileID: 5544868406922570491}
-  shootForce: 1
+  shootForce: 3
 --- !u!1 &5544868406922570491
 GameObject:
   m_ObjectHideFlags: 0

@@ -4399,6 +4399,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 2962277612291033344, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962277612291033344, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962277612291033344, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962277612291033344, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962277612291033344, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 165
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962277612291033344, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -82.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2962277612291033347, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4407,6 +4431,46 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BeginTurns
       objectReference: {fileID: 0}
+    - target: {fileID: 2962277612603441468, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962277612603441468, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962277612603441468, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962277612603441468, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962277612603441468, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 276.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962277612603441468, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -56
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962277612603441471, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 718b140e5750b084ab05d5d550811615, type: 2}
+    - target: {fileID: 2962277612603441471, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3998257418552932571, guid: 718b140e5750b084ab05d5d550811615, type: 2}
+    - target: {fileID: 2962277613146020487, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 718b140e5750b084ab05d5d550811615, type: 2}
+    - target: {fileID: 2962277613146020487, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3998257418552932571, guid: 718b140e5750b084ab05d5d550811615, type: 2}
     - target: {fileID: 9107679030285418761, guid: 320cf0399ab0aa34598ba97f3fd46631, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4510,7 +4574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: otherNum
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2167479278861284170, guid: 2a451df5262779542b16b0bd5feaa325, type: 3}
       propertyPath: archerNum

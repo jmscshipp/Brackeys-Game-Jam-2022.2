@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Character : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Character : MonoBehaviour
 
     public int health = 1;
     public Animator anim;
+    public TextMeshProUGUI textMeshProUGUI;
+    public Canvas canvas;
 
     void Start()
     {
@@ -24,6 +27,8 @@ public class Character : MonoBehaviour
         playerSelector = GameObject.Find("SelectionControl").GetComponent<Selector>();
         camControl = Camera.main.GetComponent<CameraControl>();
         myClass = GetComponent<CharacterClass>();
+        textMeshProUGUI.text = health.ToString();
+        textMeshProUGUI.color = Color.clear;
     }
 
     private void Update()
@@ -33,6 +38,8 @@ public class Character : MonoBehaviour
             rotationLerpCounter += Time.deltaTime * 10f;
             transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, 0, currentRotation), Quaternion.Euler(0, 0, rotationGoal), rotationLerpCounter);
         }
+
+        canvas.gameObject.transform.rotation = Quaternion.Euler(0, 0, -gameObject.transform.rotation.z);
     }
 
     // called by selector when character is put on tile
@@ -45,6 +52,8 @@ public class Character : MonoBehaviour
             manager.CharacterPlaced(gameObject); // passes in self so the level manager can keep a record of all placed characters
             placed = true;
         }
+
+
     }
 
     // called by selector when character is dropped anywhere not on the grid
@@ -70,6 +79,7 @@ public class Character : MonoBehaviour
     {
         anim.Play("HoveredAnim");
         playerSelector.SetSelectedCharacter(gameObject);
+        textMeshProUGUI.color = Color.green;
 
     }
 
@@ -81,10 +91,15 @@ public class Character : MonoBehaviour
         }
         
         playerSelector.SetSelectedCharacter(null);
+        textMeshProUGUI.color = Color.clear;
     }
 
     public void Attack()
     {
+        if (gameObject.GetComponent<SwordsmanClass>() != null)
+        {
+            anim.Play("SwordsmanSwing");
+        }
         myClass.Attack();
     }
 
@@ -95,6 +110,7 @@ public class Character : MonoBehaviour
             manager.ValidateTurn(); // something is happening this turn so lets do another right after!
             health -= other.GetComponent<Weapon>().damage;
             other.GetComponent<Weapon>().Death();
+            textMeshProUGUI.text = health.ToString();
             if (health <= 0)
             {
                 camControl.TriggerHeavyScreenShake();
@@ -106,6 +122,7 @@ public class Character : MonoBehaviour
         {
             health += other.GetComponent<Weapon>().damage;
             other.GetComponent<Weapon>().Death();
+            textMeshProUGUI.text = health.ToString();
         }
     }
 }

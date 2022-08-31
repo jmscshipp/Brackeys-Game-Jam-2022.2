@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c219445b9f374d345bb2b5712c5e7d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 2
   anim: {fileID: -4979015798425835360}
   textMeshProUGUI: {fileID: 390063277981359359}
   canvas: {fileID: 8794454997424655216}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 6364472184805764261}
   - component: {fileID: 6148889846794781485}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HealthCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

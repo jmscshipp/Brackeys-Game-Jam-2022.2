@@ -30,6 +30,7 @@ public class LevelManager : MonoBehaviour
     bool gameReady;
     UIManager uiManager;
     CharacterBank bank;
+    LevelAudio audioController;
 
     // this variable determines if another turn will be played after the first one
     public bool turnValid;
@@ -43,6 +44,7 @@ public class LevelManager : MonoBehaviour
         gameReady = false;
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         bank = GameObject.Find("CHARACTERBANK").GetComponent<CharacterBank>();
+        audioController = GetComponent<LevelAudio>();
 
         uiManager.UpdateCharacterPlacementUI(0, characterTotal);
         SetUpCharacters();
@@ -101,6 +103,8 @@ public class LevelManager : MonoBehaviour
 
     public void BeginTurns() //public to be activated by ui
     {
+        audioController.PlayLevelStartAudio();
+
         turnValid = false;
         uiManager.UpdateCharactersAliveUI(charactersAlive); // reset ui to display characters remaining instead of placed
 
@@ -136,7 +140,10 @@ public class LevelManager : MonoBehaviour
         placedCharacters.Add(character);
         uiManager.UpdateCharacterPlacementUI(charactersPlaced, characterTotal);
         if (charactersPlaced == characterTotal)
+        {
+            audioController.PlayCharacterPlacedAudio();
             gameReady = true;
+        }
     }
 
     // called by a character when they're removed from the board
